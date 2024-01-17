@@ -1,0 +1,41 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "API receive requests for a text file line and returns it.",
+        "title": "File Line Serve API",
+        "contact": {},
+        "version": "1.0"
+    },
+    "basePath": "/",
+    "paths": {
+        "/lines/{id}": {
+            "get": {
+                "description": "Get the line with index {line} from the file being served",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve a single line from a file",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Index of the line to be read from the file",
+                        "name": "line",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "line",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

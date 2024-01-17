@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 
+	_ "filelineserve/docs"
 	"filelineserve/service"
 
 	"github.com/gin-gonic/gin"

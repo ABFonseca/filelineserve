@@ -1,0 +1,27 @@
+basePath: /
+info:
+  contact: {}
+  description: API receive requests for a text file line and returns it.
+  title: File Line Serve API
+  version: "1.0"
+paths:
+  /lines/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Get the line with index {line} from the file being served
+      parameters:
+      - description: Index of the line to be read from the file
+        in: path
+        name: line
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: line
+          schema:
+            type: string
+      summary: Retrieve a single line from a file
+swagger: "2.0"
