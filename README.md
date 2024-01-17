@@ -23,6 +23,22 @@ To run the API just use the run script and pass the path to the file that you wa
 ./run.sh <filePath/fileName.txt>
 ```
 
+If running on windows the script will not work, please do:
+```
+go run main.go <filePath/fileName.txt>
+```
+or
+```
+./filelineserve.exe <filePath/fileName.txt>
+```
+
+### Running the automated tests
+To run the automated tests just run the test script:
+```
+./test.sh
+```
+
+
 ## How will the system perform
 
 ### File size scalling
@@ -71,7 +87,7 @@ didn't really compared with other alternative libs that would do the same or sim
 - Doing the code (without automatic tests): 2 hours
 - Doing documentation: 30 minutes
 - Finding big enough files to test for performance: More than I'm willing to admit
-- Doing automated testing: ???
+- Doing automated testing: 45 minutes (had a silly bug on the test code and took me a bit too long to detect it)
 
 ## Critiquing my code/choices
 There are a few points I don't fully agree with my code:
@@ -80,3 +96,5 @@ There are a few points I don't fully agree with my code:
 - Depending on interpretation, the chalenge requests for the return of the API call to be just the string and I return a JSON containg the string
   - Again this was to showcase a more generic API, with organized code. If needed, the change to return just the string is changing 1 line and erasing ~5 lines. 
 - With more time and if 5GB or bigger files would be something we would have to deal with I would implement the solution mentioned above in the performance section
+- To be able to have the code unit tested I would need to have dependency injection. for this exercise the code was too simple and hard to break into anything smaller than it already is, so in this case it would be hard to test just an isolated part, since there is only one part/responsability
+  - that said, for production code i would put the DI any case to be prepared from begging when we add more funcionality, and even to be run on pipelines before going to Testing/Production environments
