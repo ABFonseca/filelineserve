@@ -35,10 +35,10 @@ func (h *fileHandler) Group() *string {
 // @Schemes
 // @Description Get the line with index {line} from the file being served
 // @Accept json
-// @Param line path string true "Index of the line to be read from the file"
+// @Param line path int true "Index of the line to be read from the file"
 // @Produce json
 // @Success 200 {object} string "line"
-// @Router /lines/{id} [get]
+// @Router /lines/{line} [get]
 func (h *fileHandler) GetLine(c *gin.Context) {
 	lineNum := c.Param("line")
 	if lineNum == "" {

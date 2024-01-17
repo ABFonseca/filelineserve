@@ -5,7 +5,7 @@ info:
   title: File Line Serve API
   version: "1.0"
 paths:
-  /lines/{id}:
+  /lines/{line}:
     get:
       consumes:
       - application/json
@@ -15,7 +15,7 @@ paths:
         in: path
         name: line
         required: true
-        type: string
+        type: integer
       produces:
       - application/json
       responses:

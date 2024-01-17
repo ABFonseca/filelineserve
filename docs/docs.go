@@ -15,7 +15,7 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/lines/{id}": {
+        "/lines/{line}": {
             "get": {
                 "description": "Get the line with index {line} from the file being served",
                 "consumes": [
@@ -27,7 +27,7 @@ const docTemplate = `{
                 "summary": "Retrieve a single line from a file",
                 "parameters": [
                     {
-                        "type": "string",
+                        "type": "integer",
                         "description": "Index of the line to be read from the file",
                         "name": "line",
                         "in": "path",
